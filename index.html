@@ -271,14 +271,18 @@
                                     Contributing to real-world applications involving Gen AI and computer vision, developing and deploying intelligent systems for various use cases.
                                 </p>
                                 <ul class="position-highlights">
-                                    <li>Developed Gen AI applications for business solutions</li>
-                                    <li>Contributed to the development of a fine-tuned LLM using company data, applying unsupervised and supervised fine-tuning techniques on the Llama-3.1 model, and implemented Retrieval-Augmented Generation (RAG) for improved performance.</li>
-                                    <li>Built and deployed a solution for comparing resumes and job descriptions, fine-tuning NLP models to extract key information and enhance recruitment accuracy.</li>
-                                    <li>Metadata Service Layer: Developed a backend for metadata query extraction and UID resolution, with the UID passed to a RAG system for efficient embedding retrieval. Optimized the flow from input extraction to final output, ensuring seamless integration and enhanced performance.</li>
+                                    <li>Built Python automation pipelines for web scraping, asynchronous data collection, and storage to improve ML model inputs.</li>
+                                    <li>Fine-tuned LLMs (Qwen 3, Qwen 2.5, LLaMA 3.1) using LoRA + quantization on A100 GPUs designed an end-to-end fine-tuning pipeline.</li>
+                                    <li>Implemented Retrieval-Augmented Generation (RAG) with metadata service layer for UID resolution and embedding retrieval.</li>
+                                    <li>Developed multimodal vision-language system to extract structured information from unstructured documents.</li>
+                                    <li>Built web dashboard to track client product visibility across AI platforms with ranking metrics and SEO insights.</li>
+                                    <li> Applied computer-vision models to analyze store-shelf layouts, mapping product placement and visibility zones.</li>
+                                    <li>Created AI-powered job-description generator and resume-to-job spec comparison tool for recruiters.</li>
+                                    <li>Collaborated with teams to design and evaluate metrics for ranking, vision, and generative AI tasks.</li>
                                 </ul>
-                                <a href="assets/certificate_of_completion.pdf" target="_blank" class="view-credentials-button">
+                                <!-- <a href="assets/certificate_of_completion.pdf" target="_blank" class="view-credentials-button">
                                     View Certificate
-                                </a>
+                                </a> -->
                             </div>
                         </div>
                     </div>
@@ -331,6 +335,8 @@
                             <span class="tech-tag">Perplexity</span>
                             <span class="tech-tag">Tavily</span>
                             <span class="tech-tag">SerpAPI</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">PostgreSQL</span>                       
                         </div>
                     </div>
                 </div>
@@ -340,9 +346,29 @@
                         <p>Designed and developed an AI-powered cosmetic safety tool that scans product labels using OCR, extracts ingredients, and cross-references them with FDA (US) and Indian regulatory databases to identify banned or harmful substances, ensuring transparency and consumer safety</p>
                         <div class="project-tech">
                             <span class="tech-tag">Gemini</span>
-                            <!-- <span class="tech-tag">Perplexity</span>
-                            <span class="tech-tag">Tavily</span>
-                            <span class="tech-tag">SerpAPI</span> -->
+                            <span class="tech-tag">Ollama</span>
+                            <span class="tech-tag">Docling</span>                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Finetuning pipeline</h3>
+                        <p>End-to-end Python pipeline for fine-tuning LLMs on custom content. It parses PDFs to Markdown via Docling, chunks them by headings, generates Q&A pairs using vLLM (Qwen3-8B), and uses these pairs for fine-tuning. Includes automated inference for evaluating model performance post-training.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Docling</span>
+                            <span class="tech-tag">VLLM</span>
+                            <span class="tech-tag">Qwen3-8B</span>
+                            <span class="tech-tag">Pytorch</span>
+                            <span class="tech-tag">scikit-learn</span>
+                            <span class="tech-tag">JSON / Pandas</span>
+                            <span class="tech-tag">peft</span>
+                            <span class="tech-tag">LoRA</span>
                         </div>
                     </div>
                 </div>
