@@ -402,12 +402,6 @@ window.addEventListener('resize', debounce(function () {
 // Image preload
 function preloadImages() {
     const images = [
-        'assets/AI-powered.png',
-        'assets/braintumor.jpeg',
-        'assets/fire.jpeg',
-        'assets/HR-KPI.png',
-        'assets/profile.png',
-        'assets/stock.jpeg'
     ];
 
     images.forEach(src => {
