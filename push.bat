@@ -2,7 +2,7 @@ git init
 
 git add .
 
-git commit -m "final commit"
+git commit -m "My latest changes"
 
 git pull origin master
 
