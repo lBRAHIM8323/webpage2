@@ -4,22 +4,30 @@
  */
 // DOM Content Loaded Event
 document.addEventListener('DOMContentLoaded', function () {
+    console.log('🚀 Portfolio initialization started...');
     initializeApp();
+    console.log('✅ Portfolio initialization completed successfully!');
 });
 /**
  * Initialize all app functionality
  */
 function initializeApp() {
-    initializeNavigation();
-    initializeSmoothScrolling();
-    initializeScrollAnimations();
-    initializeContactForm();
-    initializeBackToTop();
-    initializeMobileMenu();
-    initializeTypingAnimation();
-    initializeSectionObserver();
-    initializeExperienceDropdown(); // Added dropdown functionality
-    initializeProjectsSection(); // Added projects section functionality
+    try {
+        initializeNavigation();
+        initializeSmoothScrolling();
+        initializeScrollAnimations();
+        initializeContactForm();
+        initializeBackToTop();
+        initializeMobileMenu();
+        initializeTypingAnimation();
+        initializeSectionObserver();
+        initializeExperienceDropdown(); // Added dropdown functionality
+        initializeProjectsSection(); // Added projects section functionality
+        
+        console.log('✅ All components initialized successfully');
+    } catch (error) {
+        console.error('❌ Error during app initialization:', error);
+    }
 }
 /**
  * Navigation functionality
@@ -243,36 +251,103 @@ function initializeSectionObserver() {
  */
 function initializeExperienceDropdown() {
     const positionCards = document.querySelectorAll('.position-card');
-    positionCards.forEach(card => {
+    console.log(`📁 Found ${positionCards.length} position cards for dropdown functionality`);
+    
+    if (positionCards.length === 0) {
+        console.warn('⚠️ No position cards found');
+        return;
+    }
+    
+    positionCards.forEach((card, index) => {
+        // Enhanced accessibility attributes
         card.setAttribute('tabindex', '0');
         card.setAttribute('role', 'button');
         card.setAttribute('aria-expanded', 'false');
-        const toggleCard = () => {
-            const details = card.querySelector('.position-details');
-            const icon = card.querySelector('.expand-icon');
+        card.setAttribute('aria-label', `Toggle details for position ${index + 1}`);
+        
+        const details = card.querySelector('.position-details');
+        const icon = card.querySelector('.expand-icon');
+        
+        // Ensure details have proper initial state
+        if (details) {
+            details.setAttribute('aria-hidden', 'true');
+            details.style.maxHeight = '0px';
+            details.style.opacity = '0';
+        }
+        
+        const toggleCard = (e) => {
+            // Prevent event bubbling
+            if (e) {
+                e.stopPropagation();
+            }
+            
+            if (!details || !icon) return;
+            
             const isExpanded = details.classList.contains('expanded');
+            
             if (isExpanded) {
-                details.classList.remove('expanded');
+                // Collapse
+                details.style.maxHeight = '0px';
+                details.style.opacity = '0';
+                details.setAttribute('aria-hidden', 'true');
+                
+                setTimeout(() => {
+                    details.classList.remove('expanded');
+                }, 50);
+                
                 icon.classList.remove('expanded');
                 card.classList.remove('expanded');
+                card.setAttribute('aria-expanded', 'false');
             } else {
+                // Expand
                 details.classList.add('expanded');
+                details.setAttribute('aria-hidden', 'false');
+                
+                // Calculate full height for smooth animation
+                const fullHeight = details.scrollHeight;
+                details.style.maxHeight = fullHeight + 'px';
+                details.style.opacity = '1';
+                
                 icon.classList.add('expanded');
                 card.classList.add('expanded');
+                card.setAttribute('aria-expanded', 'true');
             }
-            card.setAttribute('aria-expanded', !isExpanded);
         };
-        card.addEventListener('click', toggleCard);
-        card.addEventListener('keydown', function (e) {
+        
+        // Enhanced click handler - only trigger on card click, not child elements
+        card.addEventListener('click', function(e) {
+            // Don't trigger if clicking on links or buttons within the card
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a') || e.target.closest('button')) {
+                return;
+            }
+            toggleCard(e);
+        });
+        
+        // Enhanced keyboard support
+        card.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                toggleCard();
+                toggleCard(e);
             }
+            // ESC key to collapse if expanded
+            if (e.key === 'Escape' && details.classList.contains('expanded')) {
+                toggleCard(e);
+            }
+        });
+        
+        // Handle focus styles
+        card.addEventListener('focus', function() {
+            card.style.outline = '2px solid hsl(var(--primary-color))';
+            card.style.outlineOffset = '2px';
+        });
+        
+        card.addEventListener('blur', function() {
+            card.style.outline = 'none';
         });
     });
 }
 /**
- * Projects section functionality
+ * Projects section functionality - Enhanced implementation
  */
 function initializeProjectsSection() {
     // Get all project cards and the projects grid
@@ -280,60 +355,118 @@ function initializeProjectsSection() {
     const projectsGrid = document.querySelector('.projects-grid');
     const projectsCta = document.querySelector('.projects-cta');
     
+    console.log(`📋 Found ${projectCards.length} project cards`);
+    
     // If there are no projects or no more than 6, exit
     if (!projectCards.length || projectCards.length <= 6 || !projectsGrid || !projectsCta) {
+        console.log('ℹ️ Projects section: Not enough projects to hide or missing elements');
         return;
     }
+    
+    console.log(`🔍 Hiding ${projectCards.length - 6} projects initially`);
     
     // Hide project cards beyond the 6th one
     for (let i = 6; i < projectCards.length; i++) {
         projectCards[i].classList.add('hidden-project');
         projectCards[i].style.display = 'none';
+        projectCards[i].setAttribute('aria-hidden', 'true');
     }
     
-    // Create the "View all projects" button
+    // Create the "View All Projects" button
     const viewAllBtn = document.createElement('button');
-    viewAllBtn.className = 'view-all-btn';
-    viewAllBtn.textContent = 'View all projects';
+    viewAllBtn.className = 'btn view-all-projects-btn';
+    viewAllBtn.innerHTML = '<i class="fas fa-expand"></i> View All Projects';
+    viewAllBtn.setAttribute('aria-label', `Show ${projectCards.length - 6} more projects`);
     
     // Add click event to the button
     viewAllBtn.addEventListener('click', function() {
-        // Show all hidden projects with animation
+        // Show all hidden projects with staggered animation
         const hiddenProjects = document.querySelectorAll('.hidden-project');
         hiddenProjects.forEach((project, index) => {
             setTimeout(() => {
                 project.style.display = 'flex';
-                project.style.animation = 'fadeIn 0.5s ease-in-out';
-            }, index * 100); // Stagger the animation for a nice effect
+                project.classList.remove('hidden-project');
+                project.setAttribute('aria-hidden', 'false');
+                project.classList.add('fade-in-project');
+            }, index * 150); // Stagger the animation for a smoother effect
         });
         
-        // Hide the button
-        this.style.display = 'none';
+        // Update button text and hide it after animation
+        this.innerHTML = '<i class="fas fa-check"></i> All Projects Shown';
+        this.disabled = true;
+        
+        setTimeout(() => {
+            this.style.opacity = '0';
+            this.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                this.style.display = 'none';
+            }, 300);
+        }, hiddenProjects.length * 150 + 500);
     });
     
-    // Add the button to the CTA section
-    projectsCta.appendChild(viewAllBtn);
-    
-    // Add fadeIn animation if it doesn't exist
-    if (!document.querySelector('#fadeInAnimation')) {
-        const style = document.createElement('style');
-        style.id = 'fadeInAnimation';
-        style.textContent = `
-            @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-        `;
-        document.head.appendChild(style);
+    // Insert the button before the existing CTA content
+    const existingBtn = projectsCta.querySelector('.btn');
+    if (existingBtn) {
+        projectsCta.insertBefore(viewAllBtn, existingBtn);
+    } else {
+        projectsCta.appendChild(viewAllBtn);
     }
     
-    // Add CSS for hidden projects
-    if (!document.querySelector('#hiddenProjectStyles')) {
+    // Add enhanced animations and styles if they don't exist
+    if (!document.querySelector('#projectsAnimationStyles')) {
         const style = document.createElement('style');
-        style.id = 'hiddenProjectStyles';
+        style.id = 'projectsAnimationStyles';
         style.textContent = `
             .hidden-project {
-                display: none;
+                display: none !important;
+            }
+            
+            .fade-in-project {
+                animation: fadeInProject 0.6s ease-out forwards;
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            
+            @keyframes fadeInProject {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px) scale(0.95);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+            
+            .view-all-projects-btn {
+                background: linear-gradient(135deg, hsl(220 91% 55%) 0%, hsl(262 52% 47%) 100%);
+                margin-right: var(--space-4);
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            }
+            
+            .view-all-projects-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+            }
+            
+            .view-all-projects-btn:disabled {
+                background: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(142 71% 55%) 100%);
+                cursor: not-allowed;
+            }
+            
+            @media (max-width: 768px) {
+                .view-all-projects-btn {
+                    margin-right: 0;
+                    margin-bottom: var(--space-4);
+                    width: 100%;
+                }
+                
+                .projects-cta {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
             }
         `;
         document.head.appendChild(style);

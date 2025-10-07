@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Test Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        .test-section { background: white; margin: 20px 0; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .test-status { padding: 10px; margin: 10px 0; border-radius: 4px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+    </style>
+</head>
+<body>
+    <h1>Portfolio Implementation Test</h1>
+    
+    <div class="test-section">
+        <h2>CSS Integrity Test</h2>
+        <div id="css-test-result" class="test-status info">Testing CSS file integrity...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>JavaScript Functionality Test</h2>
+        <div id="js-test-result" class="test-status info">Testing JavaScript functionality...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Elements Availability Test</h2>
+        <div id="elements-test-result" class="test-status info">Testing required elements...</div>
+        <ul id="elements-list"></ul>
+    </div>
+
+    <script>
+        // Test CSS file loading
+        function testCSS() {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'css/style.css';
+            link.onload = function() {
+                document.getElementById('css-test-result').className = 'test-status success';
+                document.getElementById('css-test-result').textContent = '✅ CSS file loaded successfully';
+            };
+            link.onerror = function() {
+                document.getElementById('css-test-result').className = 'test-status error';
+                document.getElementById('css-test-result').textContent = '❌ CSS file failed to load';
+            };
+            document.head.appendChild(link);
+        }
+
+        // Test JavaScript file loading
+        function testJS() {
+            const script = document.createElement('script');
+            script.src = 'js/main.js';
+            script.onload = function() {
+                document.getElementById('js-test-result').className = 'test-status success';
+                document.getElementById('js-test-result').textContent = '✅ JavaScript file loaded successfully';
+                
+                // Test specific functions
+                if (typeof initializeExperienceDropdown === 'function') {
+                    document.getElementById('js-test-result').textContent += ' - Experience dropdown function found';
+                }
+                if (typeof initializeProjectsSection === 'function') {
+                    document.getElementById('js-test-result').textContent += ' - Projects section function found';
+                }
+            };
+            script.onerror = function() {
+                document.getElementById('js-test-result').className = 'test-status error';
+                document.getElementById('js-test-result').textContent = '❌ JavaScript file failed to load';
+            };
+            document.head.appendChild(script);
+        }
+
+        // Test elements on main page
+        function testElements() {
+            fetch('index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    
+                    const elements = [
+                        { selector: '.position-card', name: 'Position Cards' },
+                        { selector: '.project-card', name: 'Project Cards' },
+                        { selector: '.certification-card', name: 'Certification Cards' },
+                        { selector: '.projects-cta', name: 'Projects CTA Section' },
+                        { selector: '.position-details', name: 'Position Details' },
+                        { selector: '.expand-icon', name: 'Expand Icons' }
+                    ];
+                    
+                    const results = [];
+                    const list = document.getElementById('elements-list');
+                    
+                    elements.forEach(element => {
+                        const found = doc.querySelectorAll(element.selector);
+                        const li = document.createElement('li');
+                        if (found.length > 0) {
+                            li.innerHTML = `✅ ${element.name}: ${found.length} found`;
+                            li.style.color = '#155724';
+                        } else {
+                            li.innerHTML = `❌ ${element.name}: Not found`;
+                            li.style.color = '#721c24';
+                        }
+                        list.appendChild(li);
+                    });
+                    
+                    document.getElementById('elements-test-result').className = 'test-status success';
+                    document.getElementById('elements-test-result').textContent = '✅ Elements test completed';
+                })
+                .catch(error => {
+                    document.getElementById('elements-test-result').className = 'test-status error';
+                    document.getElementById('elements-test-result').textContent = '❌ Failed to load main page for testing';
+                });
+        }
+
+        // Run tests
+        testCSS();
+        testJS();
+        testElements();
+
+        // Log testing completion
+        setTimeout(() => {
+            console.log('🧪 All tests completed');
+        }, 2000);
+    </script>
+</body>
+</html>
+</parameter>
+</invoke>
