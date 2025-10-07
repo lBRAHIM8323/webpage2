@@ -1,1 +1,1 @@
-live-server --port=5000
+python3 -m http.server 5000

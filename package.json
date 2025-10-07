@@ -1,0 +1,27 @@
+{
+  "name": "webpage2",
+  "version": "1.0.0",
+  "description": "Mohammad Ibrahim's AI/ML Engineer Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "start": "python3 -m http.server 5000",
+    "serve": "python3 -m http.server 5000",
+    "dev": "python3 -m http.server 5000",
+    "live-server": "live-server --port=5000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lBRAHIM8323/webpage2.git"
+  },
+  "keywords": [],
+  "author": "Mohammad Ibrahim",
+  "license": "Private",
+  "bugs": {
+    "url": "https://github.com/lBRAHIM8323/webpage2/issues"
+  },
+  "homepage": "https://github.com/lBRAHIM8323/webpage2#readme",
+  "devDependencies": {
+    "live-server": "^1.1.0"
+  }
+}
