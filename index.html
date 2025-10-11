@@ -1,655 +1,744 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mohammad Ibrahim's Portfolio - AI/ML Engineer showcasing artificial intelligence and machine learning projects">
-    <meta name="keywords" content="Mohammad Ibrahim, AI Engineer, ML Engineer, Machine Learning, Artificial Intelligence, Python, TensorFlow, OpenCV, LLMs">
-    <meta name="author" content="Eng. Mohammad Ibrahim">
+    <!-- Meta tags provide information about the webpage -->
+    <meta charset="UTF-8"> <!-- Defines character encoding for proper text display -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes website responsive on mobile devices -->
+    <meta name="description" content="Mohammad Ibrahim - AI/ML Engineer passionate about developing responsible and impactful AI solutions"> <!-- Description for search engines -->
     
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Mohammad Ibrahim's Portfolio - AI/ML Engineer">
-    <meta property="og:description" content="Explore my journey as an AI/ML Engineer with innovative projects in artificial intelligence and machine learning">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lbrahim8323.github.io/portfolio_web/">
+    <!-- Title appears in browser tab -->
+    <title>Mohammad Ibrahim | AI/ML Engineer</title>
     
-    <title>Mohammad Ibrahim - AI/ML Engineer Portfolio</title>
+    <!-- Link to external stylesheet for all design/styling -->
+    <link rel="stylesheet" href="style.css">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
-    
-    <!-- Font Awesome -->
+    <!-- Font Awesome CDN for icons (like social media icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts for professional typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- This is the robot logo on top of the browser -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><text y=%2214%22 font-size=%2216%22>🤖</text></svg>">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- 
+        NAVIGATION BAR 
+        This is the fixed menu at the top of the page
+        - Stays visible when scrolling
+        - Contains links to all sections
+        - Has a mobile hamburger menu
+        - Includes dark mode toggle
+    -->
     <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">Eng. Mohammad Ibrahim</a>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#experience" class="nav-link">Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#certifications" class="nav-link">Certifications</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
+        <!-- Container centers the navigation content and limits max width -->
+        <div class="container nav-container">
+            <!-- Logo/name on the left side - CHANGE THIS to your name -->
+            <div class="logo">Eng. Mohammad Ibrahim</div>
+            
+            <!-- Navigation links - these jump to different sections of the page -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            
+            <!-- Dark mode toggle button -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <!-- Hamburger menu icon for mobile devices (shows/hides on small screens) -->
+            <div class="hamburger" id="hamburger">
+                <span></span> <!-- Top bar of hamburger icon -->
+                <span></span> <!-- Middle bar of hamburger icon -->
+                <span></span> <!-- Bottom bar of hamburger icon -->
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
+    <!-- 
+        HERO SECTION 
+        This is the first thing visitors see when they land on your website
+        - Contains your introduction and profile photo
+        - Uses a two-column layout (text on left, image on right)
+    -->
+    <section class="hero" id="home">
+        <!-- Container for two-column layout -->
+        <div class="container hero-container">
+            <!-- LEFT COLUMN: Text content -->
             <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        Hi, I'm <span class="highlight">Mohammad Ibrahim</span>
-                    </h1>
-                    <h2 class="hero-subtitle">AI/ML Engineer</h2>
-                    <p class="hero-description">
-                        Passionate about developing responsible and impactful AI solutions. I specialize in machine learning, 
-                        large language models, and computer vision to create intelligent systems that solve real-world problems.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                    </div>
-                    <div class="hero-social">
-                        <a href="https://github.com/lBRAHIM8323" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/lbrahim" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="assets/profile.png" alt="Mohammad Ibrahim - AI/ML Engineer" class="profile-img">
+                <!-- Main heading with your name - CHANGE THIS -->
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Mohammad Ibrahim</span></h1>
+                
+                <!-- Your job title/role - CHANGE THIS -->
+                <h2 class="hero-subtitle">AI/ML Engineer</h2>
+                
+                <!-- Brief description about yourself - CHANGE THIS -->
+                <p class="hero-description">
+                    Passionate about developing responsible and impactful AI solutions. I specialize in machine learning,
+                    large language models, and computer vision to create intelligent systems that solve real-world problems.
+                </p>
+                
+                <!-- Call-to-action buttons -->
+                <div class="hero-buttons">
+                    <!-- Primary button links to projects section -->
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <!-- Secondary button links to contact section -->
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <a href="#about">
-                <i class="fas fa-chevron-down"></i>
-            </a>
+            
+            <!-- RIGHT COLUMN: Profile image -->
+            <div class="hero-image">
+                <!-- Wrapper for styling and effects -->
+                <div class="image-wrapper">
+                    <!-- Your profile photo - REPLACE with your image path -->
+                    <img src="assets/profile.png" alt="Mohammad Ibrahim - AI/ML Engineer">
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- 
+        ABOUT SECTION 
+        Tells visitors more about you, your experience, and what you do
+        - Two-column layout: Bio text on left, stats on right
+        - Services/skills cards at the bottom
+    -->
+    <section class="about" id="about">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Get to know me better</p>
-            </div>
+            <!-- Section title (appears on all sections) -->
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Get to know me better</p>
+            
+            <!-- Two-column layout for about content -->
             <div class="about-content">
+                <!-- LEFT: Biography text - CHANGE THIS to your story -->
                 <div class="about-text">
                     <h3>Hello! I'm Mohammad Ibrahim</h3>
                     <p>
-                        I am an aspiring AI/ML Engineer with over 10 months of hands-on experience in developing and deploying 
-                        intelligent systems. I hold a B.Tech in Computer Science and Engineering and am currently working as an 
+                        I am an aspiring AI/ML Engineer with over 10 months of hands-on experience in developing and deploying
+                        intelligent systems. I hold a B.Tech in Computer Science and Engineering and am currently working as an
                         AI/ML Engineer at PharynxAI, where I contribute to real-world applications involving Gen AI and computer vision.
                     </p>
                     <p>
-                        Passionate about responsible and impactful AI, I also serve as a Global Ambassador for the Responsible AI UAE 
-                        Chapter, where I actively promote ethical practices in AI development and deployment. My areas of interest 
-                        include Artificial Intelligence, Machine Learning, Large Language Models (LLMs), chatbot development, 
+                        Passionate about responsible and impactful AI, I also serve as a Global Ambassador for the Responsible AI UAE
+                        Chapter, where I actively promote ethical practices in AI development and deployment. My areas of interest
+                        include Artificial Intelligence, Machine Learning, Large Language Models (LLMs), chatbot development,
                         fine-tuning open-source LLMs, OpenCV, and object detection.
                     </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h4>12</h4>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div class="stat">
-                            <h4>6</h4>
-                            <p>AI/ML Domains</p>
-                        </div>
-                        <div class="stat">
-                            <h4>35+</h4>
-                            <p>Technologies Used</p>
-                        </div>
+                </div>
+                
+                <!-- RIGHT: Statistics cards - CHANGE numbers to match your achievements -->
+                <div class="stats">
+                    <!-- Stat card 1 -->
+                    <div class="stat-item">
+                        <h4>12</h4> <!-- Number - CHANGE THIS -->
+                        <p>Projects Completed</p> <!-- Label - CHANGE THIS -->
+                    </div>
+                    <!-- Stat card 2 -->
+                    <div class="stat-item">
+                        <h4>6</h4> <!-- Number - CHANGE THIS -->
+                        <p>AI/ML Domains</p> <!-- Label - CHANGE THIS -->
+                    </div>
+                    <!-- Stat card 3 -->
+                    <div class="stat-item">
+                        <h4>35+</h4> <!-- Number - CHANGE THIS -->
+                        <p>Technologies Used</p> <!-- Label - CHANGE THIS -->
                     </div>
                 </div>
-                <div class="about-skills">
-                    <h3>What I Do</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fas fa-brain"></i>
-                            <h4>Machine Learning</h4>
-                            <p>Developing and deploying ML models for various applications using TensorFlow and other frameworks.</p>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-robot"></i>
-                            <h4>AI Development</h4>
-                            <p>Building intelligent systems including chatbots, AI agents, and generative AI applications.</p>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-eye"></i>
-                            <h4>Computer Vision</h4>
-                            <p>Creating object detection and image processing solutions using OpenCV and deep learning.</p>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-comments"></i>
-                            <h4>NLP & LLMs</h4>
-                            <p>Fine-tuning large language models and developing natural language processing applications.</p>
-                        </div>
+            </div>
+
+            <!-- "What I Do" services section -->
+            <div class="services">
+                <h3 class="services-title">What I Do</h3>
+                <!-- Grid layout for service cards (automatically wraps on smaller screens) -->
+                <div class="services-grid">
+                    <!-- Service Card 1 - TO ADD MORE: copy entire div.service-card -->
+                    <div class="service-card">
+                        <i class="fas fa-brain"></i> <!-- Icon from Font Awesome -->
+                        <h4>Machine Learning</h4> <!-- Service title - CHANGE THIS -->
+                        <p>Developing and deploying ML models for various applications using TensorFlow and other frameworks.</p> <!-- Description - CHANGE THIS -->
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="service-card">
+                        <i class="fas fa-robot"></i> <!-- Icon - CHANGE to different icon if needed -->
+                        <h4>AI Development</h4> <!-- CHANGE THIS -->
+                        <p>Building intelligent systems including chatbots, AI agents, and generative AI applications.</p> <!-- CHANGE THIS -->
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="service-card">
+                        <i class="fas fa-eye"></i>
+                        <h4>Computer Vision</h4> <!-- CHANGE THIS -->
+                        <p>Creating object detection and image processing solutions using OpenCV and deep learning.</p> <!-- CHANGE THIS -->
+                    </div>
+                    <!-- Service Card 4 -->
+                    <div class="service-card">
+                        <i class="fas fa-comments"></i>
+                        <h4>NLP & LLMs</h4> <!-- CHANGE THIS -->
+                        <p>Fine-tuning large language models and developing natural language processing applications.</p> <!-- CHANGE THIS -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section - Now comes before Skills -->
-    <section id="experience" class="experience">
+    <!-- 
+        EXPERIENCE & EDUCATION SECTION 
+        Timeline layout showing your professional journey
+        - Current positions listed first
+        - Education section below
+        - Each item has a badge, title, company, dates, and description
+    -->
+    <section class="experience" id="experience">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Experience & Education</h2>
-                <p class="section-subtitle">My professional journey</p>
+            <h2 class="section-title">Experience & Education</h2>
+            <p class="section-subtitle">My professional journey</p>
+            
+            <div class="timeline">
+                <!-- Category heading for current positions -->
+                <h3 class="timeline-category">Current Positions</h3>
+                
+                <!-- TIMELINE ITEM 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-badge">Current</div>
+                    <div class="timeline-content">
+                        <h4>Global AI Delegate to the UAE</h4>
+                        <h5>Global Alliance for Artificial Intelligence</h5>
+                        <span class="timeline-date">May 2025 - Present</span>
+                        <div class="timeline-description">
+                            <p>Representing the UAE in global AI initiatives and contributing to international AI policy discussions and collaborations.</p>
+                            <ul>
+                                <li>Represent GAFAI at UAE tech forums, policy discussions, and industry events</li>
+                                <li>Advance responsible AI practices among UAE's developer community and enterprises</li>
+                                <li>Bridge technical implementation with ethical frameworks for emerging AI applications</li>
+                                <li>Foster collaboration between UAE's innovators and global AI leaders</li>
+                                <li>Promote scalable, ethical AI solutions that align with the UAE's vision for tech leadership</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-actions">
+                            <button class="expand-btn" onclick="toggleExpand(this)">Read more ▼</button>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7333155654259372032/" target="_blank" class="credentials-link">View Credentials</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TIMELINE ITEM 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-badge">Current</div>
+                    <div class="timeline-content">
+                        <h4>Global Ambassador</h4>
+                        <h5>Responsible AI UAE Chapter</h5>
+                        <span class="timeline-date">Feb 2025 - Present</span>
+                        <div class="timeline-description">
+                            <p>Actively promoting ethical practices in AI development and deployment, organizing events and workshops on responsible AI.</p>
+                            <ul>
+                                <li>Empower Inclusion & Diverse Perspectives – Advocating for underrepresented communities in AI governance & ethical AI frameworks.</li>
+                                <li>Shape AI Governance Frameworks – Collaborating with global policymakers, security leaders, and academia to balance innovation, security, and ethics.</li>
+                                <li>Enhance AI for Cybersecurity Education – Developing AI-powered learning tools to strengthen cyber resilience.</li>
+                                <li>Champion Ethical AI in Education: ensuring AI is ethical, secure, and beneficial for humanity.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-actions">
+                            <button class="expand-btn" onclick="toggleExpand(this)">Read more ▼</button>
+                            <a href="https://www.linkedin.com/posts/global-council-for-responsible-ai-uae-chapter_uae-responsibleai-aiforgood-activity-7302421907620925440-tFWG?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWrzaoBcrjGNJ30pOXLYfxx6lapyO7GVRI" target="_blank" class="credentials-link">View Credentials</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TIMELINE ITEM 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-badge">Current</div>
+                    <div class="timeline-content">
+                        <h4>Artificial Intelligence & Machine Learning</h4>
+                        <h5>PharynxAI</h5>
+                        <span class="timeline-date">Nov 2024 - Present</span>
+                        <div class="timeline-description">
+                            <p>Contributing to real-world applications involving Gen AI and computer vision, developing and deploying intelligent systems for various use cases.</p>
+                            <ul>
+                                <li>Built Python automation pipelines for web scraping, asynchronous data collection, and storage to improve ML model inputs.</li>
+                                <li>Fine-tuned LLMs (Qwen 3, Qwen 2.5, LLaMA 3.1) using LoRA + quantization on A100 GPUs designed an end-to-end fine-tuning pipeline.</li>
+                                <li>Implemented Retrieval-Augmented Generation (RAG) with metadata service layer for UID resolution and embedding retrieval.</li>
+                                <li>Developed multimodal vision-language system to extract structured information from unstructured documents.</li>
+                                <li>Built web dashboard to track client product visibility across AI platforms with ranking metrics and SEO insights.</li>
+                                <li>Applied computer-vision models to analyze store-shelf layouts, mapping product placement and visibility zones.</li>
+                                <li>Created AI-powered job-description generator and resume-to-job spec comparison tool for recruiters.</li>
+                                <li>Collaborated with teams to design and evaluate metrics for ranking, vision, and generative AI tasks.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-actions">
+                            <button class="expand-btn" onclick="toggleExpand(this)">Read more ▼</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Category -->
+                <h3 class="timeline-category">Education</h3>
+                
+                <!-- EDUCATION ITEM -->
+                <div class="timeline-item">
+                    <div class="timeline-badge">Graduated in 2025</div>
+                    <div class="timeline-content">
+                        <h4>Bachelor of Technology in Computer Science</h4>
+                        <h5>Jamia Hamdard University</h5>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Developed a solid foundation in computer science with a focus on programming, systems, and analytical problem-solving.</li>
+                                <li>Became proficient in C and Python, applying them to algorithm design, data structures, and computational challenges.</li>
+                                <li>Gained practical experience in operating systems, computer architecture, and databases, including system-level programming, SQL, and core OS concepts like process management and memory handling.</li>
+                                <li>Explored AI, machine learning, data analytics, and cloud computing through electives.</li>
+                                <li>Completed two minor projects and one major project, applying theoretical concepts to real-world problems and strengthening software design and implementation skills.</li>
+                            </ul>
+
+                        </div>
+                        <div class="timeline-actions">
+                            <button class="expand-btn" onclick="toggleExpand(this)">Read more ▼</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+     <!-- 
+        PROJECTS SECTION 
+        Showcases your portfolio work
+        - Grid layout that automatically adjusts for different screen sizes
+        - Each project has title, description, and technology tags
+    -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Exploring the intersection of AI, machine learning, and real-world applications</p>
+            
+            <!-- Grid container for project cards -->
+            <div class="projects-grid">
+                <!-- PROJECT CARD 1 - TO ADD MORE: copy entire div.project-card -->
+                <div class="project-card">
+                    <!-- Project name - CHANGE THIS -->
+                    <h4>AI-SEO</h4>
+                    <!-- Project description - CHANGE THIS -->
+                    <p>Designed and developed the backend for an AI-powered SEO tool that enables marketing teams to optimize and rank their products across multiple large language models (LLMs), streamlining workflows and improving product visibility.</p>
+                    <!-- Technology tags - ADD/REMOVE as needed -->
+                    <div class="project-tags">
+                        <span>OpenAI</span>
+                        <span>Gemini</span>
+                        <span>Perplexity</span>
+                        <span>Tavily</span>
+                        <span>SerpAPI</span>
+                        <span>FastAPI</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                </div>
+
+                <!-- PROJECT CARD 2 -->
+                <div class="project-card">
+                    <h4>EmailSynapse</h4>
+                    <p>Designed and developed an AI-powered email management assistant that enables professionals to automatically categorize, summarize, and schedule emails across Google services, streamlining inbox management and improving productivity through intelligent calendar integration.</p>
+                    <div class="project-tags">
+                        <span>Gmail</span>
+                        <span>Google Calendar</span>
+                        <span>Google Cloud Console</span>
+                        <span>Gemini</span>
+                        <span>Python</span>
+                        <span>Streamlit</span>
+                    </div>
+                </div>
+
+                <!-- PROJECT CARD 3 -->
+                <div class="project-card">
+                    <h4>Cosmetic Ingredient Scanner</h4>
+                    <p>Designed and developed an AI-powered cosmetic safety tool that scans product labels using OCR, extracts ingredients, and cross-references them with FDA (US) and Indian regulatory databases to identify banned or harmful substances, ensuring transparency and consumer safety.</p>
+                    <div class="project-tags">
+                        <span>Gemini</span>
+                        <span>Ollama</span>
+                        <span>Docling</span>
+                    </div>
+                </div>
+
+                <!-- PROJECT CARD 4 -->
+                <div class="project-card">
+                    <h4>Finetuning Pipeline</h4>
+                    <p>End-to-end Python pipeline for fine-tuning LLMs on custom content. It parses PDFs to Markdown via Docling, chunks them by headings, generates Q&A pairs using vLLM (Qwen3-8B), and uses these pairs for fine-tuning. Includes automated inference for evaluating model performance post-training.</p>
+                    <div class="project-tags">
+                        <span>Docling</span>
+                        <span>VLLM</span>
+                        <span>Qwen3-8B</span>
+                        <span>PyTorch</span>
+                        <span>scikit-learn</span>
+                        <span>peft</span>
+                        <span>LoRA</span>
+                    </div>
+                </div>
+
+                <!-- PROJECT CARD 5 -->
+                <div class="project-card">
+                    <h4>RASA NLU Bot</h4>
+                    <p>Trained a Rasa NLU model for intent classification and entity extraction using custom training data. Supports multiple user intents such as greetings, FAQs, and service inquiries with high accuracy.</p>
+                    <div class="project-tags">
+                        <span>Rasa</span>
+                        <span>Natural Language Understanding</span>
+                        <span>Python</span>
+                        <span>scikit-learn</span>
+                        <span>YAML</span>
+                    </div>
+                </div>
+
+                <!-- PROJECT CARD 6 -->
+                <div class="project-card">
+                    <h4>Job Description & KPI Generator</h4>
+                    <p>RESTful API using FastAPI to generate detailed job descriptions and KPIs from role summaries, integrated with LLM backend (Ollama API with LLaMA 3.1 model) for AI-powered natural language generation.</p>
+                    <div class="project-tags">
+                        <span>FastAPI</span>
+                        <span>Python</span>
+                        <span>LLaMA 3.1-8B</span>
+                        <span>Ollama API</span>
+                    </div>
+                </div>
+
+                <!-- PROJECT CARD 7 -->
+                <div class="project-card">
+                    <h4>AI-Powered Resume Matcher</h4>
+                    <p>Complete AI system using spaCy, SentenceTransformers, and Ollama for parsing and matching resumes with job descriptions using semantic embeddings and similarity algorithms.</p>
+                    <div class="project-tags">
+                        <span>spaCy</span>
+                        <span>SentenceTransformers</span>
+                        <span>BERT</span>
+                        <span>Streamlit</span>
+                    </div>
+                </div>
+
+                <!-- PROJECT CARD 8 -->
+                <div class="project-card">
+                    <h4>UAE Number Plate Price Prediction</h4>
+                    <p>Built a machine learning pipeline to predict number plate prices in the UAE by scraping data from Xplate.com. Included analysis of patterns like repeating digits, culturally significant numbers (e.g., 786), and short sequences.</p>
+                    <div class="project-tags">
+                        <span>BeautifulSoup</span>
+                        <span>Pandas</span>
+                        <span>Machine Learning</span>
+                        <span>Keras</span>
+                    </div>
+                </div>
+
+                <!-- PROJECT CARD 9 -->
+                <div class="project-card">
+                    <h4>Stock Price Prediction using LSTM</h4>
+                    <p>Advanced LSTM neural networks trained on Nifty-50 stock data with technical analysis, moving averages visualization, and deployed as interactive Streamlit web app.</p>
+                    <div class="project-tags">
+                        <span>LSTM</span>
+                        <span>Time Series</span>
+                        <span>Financial AI</span>
+                        <span>Streamlit</span>
+                    </div>
+                </div>
+
+                <!-- PROJECT CARD 10 -->
+                <div class="project-card">
+                    <h4>Legal Document Summarization</h4>
+                    <p>Fine-tuned Seq2Seq model using FLAN-T5-large with Hugging Face transformers for advanced abstractive text summarization of legal documents.</p>
+                    <div class="project-tags">
+                        <span>NLP</span>
+                        <span>Transformers</span>
+                        <span>Fine-tuning</span>
+                        <span>FLAN-T5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button to toggle showing more/less projects -->
+            <div class="view-all">
+                <button id="toggleProjects" class="btn btn-primary">
+                    <span id="projectsButtonText">Show More Projects</span>
+                    <i class="fas fa-chevron-down" id="projectsButtonIcon"></i>
+                </button>
+                <a href="https://github.com/lBRAHIM8323?tab=repositories" target="_blank" class="btn btn-secondary" style="margin-left: 15px;">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        SKILLS SECTION 
+        Displays your technical skills organized by category
+        - Each category has a heading and skill tags
+        - Skills are displayed as clickable-looking tags
+    -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <p class="section-subtitle">Tools and technologies I work with</p>
+            
+            <div class="skills-container">
+                <!-- SKILL CATEGORY 1 - AI/ML Skills -->
+                <div class="skill-category">
+                    <!-- Category heading - CHANGE THIS -->
+                    <h3>Artificial Intelligence / Machine Learning</h3>
+                    <!-- Skill tags - ADD/REMOVE as needed -->
+                    <div class="skill-tags">
+                        <span>Machine Learning</span>
+                        <span>Deep Learning</span>
+                        <span>Generative AI</span>
+                        <span>LLMs</span>
+                        <span>Computer Vision</span>
+                        <span>NLP</span>
+                        <span>Object Detection</span>
+                        <span>RAG</span>
+                        <span>AI Agents</span>
+                        <span>AI SEO</span>
+                    </div>
+                </div>
+
+                <!-- SKILL CATEGORY 2 - Programming Skills -->
+                <div class="skill-category">
+                    <h3>Programming & Frameworks</h3>
+                    <div class="skill-tags">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>OpenCV</span>
+                        <span>Keras</span>
+                        <span>PyTorch</span>
+                        <span>Scikit-learn</span>
+                        <span>Pandas</span>
+                        <span>NumPy</span>
+                        <span>Matplotlib</span>
+                        <span>LoRA</span>
+                        <span>PEFT</span>
+                        <span>SFT</span>
+                        <span>Zapier</span>
+                        <span>llama-index</span>
+                        <span>LangChain</span>
+                        <span>LangGraph</span>
+                        <span>n8n</span>
+                        <span>PostgreSQL</span>
+                        <span>MySQL</span>
+                    </div>
+                </div>
+
+                <!-- SKILL CATEGORY 3 - Specializations -->
+                <div class="skill-category">
+                    <h3>Specializations</h3>
+                    <div class="skill-tags">
+                        <span>Chatbots</span>
+                        <span>Fine-tuning</span>
+                        <span>Prompt Engineering</span>
+                        <span>Model Deployment</span>
+                        <span>Data Analysis</span>
+                        <span>Git</span>
+                        <span>Docker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        CERTIFICATIONS SECTION 
+        Displays your professional certifications and credentials
+        - Grid layout for certification cards
+        - Each card includes icon, title, issuer, date, skills, and credential link
+    -->
+    <section class="certifications" id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <p class="section-subtitle">Professional credentials and achievements</p>
+            
+            <!-- Grid container for certification cards -->
+            <div class="certifications-grid" id="certificationsGrid">
+                <!-- CERTIFICATION CARD 1 - TO ADD MORE: copy entire div.cert-card -->
+                <div class="cert-card">
+                    <!-- Header with icon and title -->
+                    <div class="cert-header">
+                        <!-- <i class="fas fa-certificate"></i> -->
+                        <!-- Certificate name - CHANGE THIS -->
+                        <h4>ChatGPT Prompt Engineering for Developers</h4>
+                    </div>
+                    <!-- Issuing organization - CHANGE THIS -->
+                    <h5>DeepLearning.ai</h5>
+                    <!-- Issue date - CHANGE THIS -->
+                    <span class="cert-date">Issued Sept 2025</span>
+                    <!-- Skills learned/covered - CHANGE THESE -->
+                    <div class="cert-skills">
+                        <span>Systematic Prompt Engineering</span>
+                        <span>ChatGPT</span>
+                        <span>Application Integration</span>
+                        <span>Custom Chatbot Development</span>
+                        <span>LLM API Integration</span>
+                    </div>
+                    <!-- Link to verify credentials - CHANGE THIS -->
+                    <a href="https://learn.deeplearning.ai/accomplishments/8e5df41f-01da-47c2-af05-ce8083f3008b?usp=sharing" target="_blank" class="credentials-link">View Credentials</a>
+                </div>
+
+                <!-- CERTIFICATION CARD 2 -->
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <!-- <i class="fas fa-certificate"></i> -->
+                        <h4>Artificial Intelligence and Machine Learning</h4>
+                    </div>
+                    <h5>Jamia Millia Islamia (JMI), Delhi</h5>
+                    <span class="cert-date">Issued Jul 2024</span>
+                    <div class="cert-skills">
+                        <span>Microsoft Power BI</span>
+                        <span>Keras</span>
+                        <span>Artificial Neural Network</span>
+                        <span>Pandas</span>
+                        <span>TensorFlow</span>
+                        <span>CNN</span>
+                        <span>Weka</span>
+                        <span>AI</span>
+                        <span>NumPy</span>
+                        <span>Scikit-Learn</span>
+                    </div>
+                    <a href="assets/STTP.jpeg" target="_blank" class="credentials-link">View Credentials</a>
+                </div>
+
+                <!-- CERTIFICATION CARD 3 -->
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <!-- <i class="fas fa-certificate"></i> -->
+                        <h4>Supervised Machine Learning: Regression and Classification</h4>
+                    </div>
+                    <h5>DeepLearning.AI</h5>
+                    <span class="cert-date">Issued Oct 2023</span>
+                    <div class="cert-skills">
+                        <span>Classification</span>
+                        <span>Logistic Regression</span>
+                        <span>Regression Testing</span>
+                        <span>Regression Models</span>
+                        <span>Machine Learning</span>
+                    </div>
+                    <a href="assets/deeplearning_ai.jpeg" target="_blank" class="credentials-link">View Credentials</a>
+                </div>
             </div>
             
-            <div class="experience-container">
-                <!-- Current Positions -->
-                <div class="current-positions">
-                    <h3>Current Positions</h3>
-                    <div class="current-grid">
-                        <!-- Position Card 1 -->
-                        <div class="position-card">
-                            <div class="position-header">
-                                <div class="position-info">
-                                    <span class="position-badge">Current</span>
-                                    <h4 class="position-title">Global AI Delegate to the UAE</h4>
-                                    <h5 class="position-company">Global Alliance for Artificial Intelligence</h5>
-                                    <span class="position-duration">May 2025 - Present</span>
-                                </div>
-                                <div class="expand-icon">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6,9 12,15 18,9"></polyline>
-                                    </svg>
-                                </div>
-                            </div>
-                            
-                            <div class="position-details">
-                                <div class="position-details-content">
-                                    <p class="position-description">
-                                        Representing the UAE in global AI initiatives and contributing to international AI policy discussions and collaborations.
-                                    </p>
-                                    <ul class="position-highlights">
-                                        <li>Represent GAFAI at UAE tech forums, policy discussions, and industry events</li>
-                                        <li>Advance responsible AI practices among UAE's developer community and enterprises</li>
-                                        <li>Bridge technical implementation with ethical frameworks for emerging AI applications</li>
-                                        <li>Foster collaboration between UAE's innovators and global AI leaders</li>
-                                        <li>Promote scalable, ethical AI solutions that align with the UAE's vision for tech leadership</li>
-                                    </ul>
-                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7333155654259372032/" target="_blank" class="view-credentials-button">
-                                        View Credentials
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Position Card 2 -->
-                        <div class="position-card">
-                            <div class="position-header">
-                                <div class="position-info">
-                                    <span class="position-badge">Current</span>
-                                    <h4 class="position-title">Global Ambassador</h4>
-                                    <h5 class="position-company">Responsible AI UAE Chapter</h5>
-                                    <span class="position-duration">Feb 2025 - Present</span>
-                                </div>
-                                <div class="expand-icon">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6,9 12,15 18,9"></polyline>
-                                    </svg>
-                                </div>
-                            </div>
-                            
-                            <div class="position-details">
-                                <div class="position-details-content">
-                                    <p class="position-description">
-                                        Actively promoting ethical practices in AI development and deployment, organizing events and workshops on responsible AI.
-                                    </p>
-                                    <ul class="position-highlights">
-                                        <li>Empower Inclusion & Diverse Perspectives – Advocating for underrepresented communities in AI governance & ethical AI frameworks.</li>
-                                        <li>Shape AI Governance Frameworks – Collaborating with global policymakers, security leaders, and academia to balance innovation, security, and ethics.</li>
-                                        <li>Enhance AI for Cybersecurity Education – Developing AI-powered learning tools to strengthen cyber resilience.</li>
-                                        <li>Champion Ethical AI in Education: ensuring AI is ethical, secure, and beneficial for humanity.</li>
-                                    </ul>
-                                    <a href="https://www.linkedin.com/posts/global-council-for-responsible-ai-uae-chapter_uae-responsibleai-aiforgood-activity-7302421907620925440-tFWG?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWrzaoBcrjGNJ30pOXLYfxx6lapyO7GVRI" target="_blank" class="view-credentials-button">
-                                        View Credentials
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="position-card">
-                        <div class="position-header">
-                            <div class="position-info">
-                                <span class="position-badge">Current</span>
-                                <h4 class="position-title">Artificial Intelligence & Machine Learning</h4>
-                                <h5 class="position-company">PharynxAI</h5>
-                                <span class="position-duration">Nov 2024 - Present</span>
-                            </div>
-                            <div class="expand-icon">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="6,9 12,15 18,9"></polyline>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <div class="position-details">
-                            <div class="position-details-content">
-                                <p class="position-description">
-                                    Contributing to real-world applications involving Gen AI and computer vision, developing and deploying intelligent systems for various use cases.
-                                </p>
-                                <ul class="position-highlights">
-                                    <li>Built Python automation pipelines for web scraping, asynchronous data collection, and storage to improve ML model inputs.</li>
-                                    <li>Fine-tuned LLMs (Qwen 3, Qwen 2.5, LLaMA 3.1) using LoRA + quantization on A100 GPUs designed an end-to-end fine-tuning pipeline.</li>
-                                    <li>Implemented Retrieval-Augmented Generation (RAG) with metadata service layer for UID resolution and embedding retrieval.</li>
-                                    <li>Developed multimodal vision-language system to extract structured information from unstructured documents.</li>
-                                    <li>Built web dashboard to track client product visibility across AI platforms with ranking metrics and SEO insights.</li>
-                                    <li> Applied computer-vision models to analyze store-shelf layouts, mapping product placement and visibility zones.</li>
-                                    <li>Created AI-powered job-description generator and resume-to-job spec comparison tool for recruiters.</li>
-                                    <li>Collaborated with teams to design and evaluate metrics for ranking, vision, and generative AI tasks.</li>
-                                </ul>
-                                <!-- <a href="assets/certificate_of_completion.pdf" target="_blank" class="view-credentials-button">
-                                    View Certificate
-                                </a> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Education Section -->
-                <section class="education education-single">
-                    <h3>Education</h3>
-                    <div class="education-timeline">
-                        <div class="education-item">
-                            <div class="education-marker"></div>
-                            <div class="education-content">
-                                <span class="education-date">Graduated in 2025</span>
-                                <h4>Bachelor of Technology in Computer Science</h4>
-                                <h5>Jamia Hamdard University</h5>
-                                <div class="education-details">
-                                    Bachelor's degree in Computer Science and Engineering with focus on software development, algorithms, and modern web technologies.
-                                </div>
-                                <ul class="education-achievements">
-                                    <!-- <li>Specialized in Full-Stack Development</li>
-                                    <li>Strong foundation in Data Structures & Algorithms</li>
-                                    <li>Experience with modern web frameworks</li>
-                                    <li>Completed various software engineering projects</li>
-                                </ul> -->
-                                <!-- Optional GPA badge - uncomment if you want to display GPA -->
-                                <!-- <div class="education-grade">GPA: 3.8/4.0</div> -->
-                            </div>
-                        </div>
-                    </div>
-                </section>
+            <!-- Button to toggle showing more/less certifications -->
+            <div class="view-all">
+                <button id="toggleCertifications" class="btn btn-primary">
+                    <span id="certificationsButtonText">Show More Certifications</span>
+                    <i class="fas fa-chevron-down" id="certificationsButtonIcon"></i>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <!-- 
+        CONTACT SECTION 
+        Allows visitors to get in touch with you
+        - Two-column layout: Form on right, contact info on left
+        - Form submits to Formspree for email delivery
+        - Contact info includes email, phone, and social media links
+    -->
+    <section class="contact" id="contact">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Exploring the intersection of AI, machine learning, and real-world applications</p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>AI-SEO</h3>
-                        <p>Designed and developed the backend for an AI-powered SEO tool that enables marketing teams to optimize and rank their products across multiple large language models (LLMs), streamlining workflows and improving product visibility.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">OpenAI</span>
-                            <span class="tech-tag">Gemini</span>
-                            <span class="tech-tag">Perplexity</span>
-                            <span class="tech-tag">Tavily</span>
-                            <span class="tech-tag">SerpAPI</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">PostgreSQL</span>                       
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's work together on your next project</p>
+            
+            <!-- Two-column container -->
+            <div class="contact-container">
+                <!-- LEFT COLUMN: Contact Information -->
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <!-- Email contact item -->
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:mohd.lbrahim8323@gmail.com">mohd.lbrahim8323@gmail.com</a>
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>EmailSynapse</h3>
-                        <p>Designed and developed an AI-powered email management assistant that enables professionals to automatically categorize, summarize, and schedule emails across Google services, streamlining inbox management and improving productivity through intelligent calendar integration.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Gmail</span>
-                            <span class="tech-tag">Google Calender</span>
-                            <span class="tech-tag">Google cloud Console</span>
-                            <span class="tech-tag">Gemini</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Streamlit</span>                       
+                    
+                    <!-- Phone contact item -->
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Mobile</h4>
+                            <a href="tel:+971563188995">+971-563188995</a>
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Cosmetic Ingredient Scanner</h3>
-                        <p>Designed and developed an AI-powered cosmetic safety tool that scans product labels using OCR, extracts ingredients, and cross-references them with FDA (US) and Indian regulatory databases to identify banned or harmful substances, ensuring transparency and consumer safety</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Gemini</span>
-                            <span class="tech-tag">Ollama</span>
-                            <span class="tech-tag">Docling</span>                            
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Finetuning pipeline</h3>
-                        <p>End-to-end Python pipeline for fine-tuning LLMs on custom content. It parses PDFs to Markdown via Docling, chunks them by headings, generates Q&A pairs using vLLM (Qwen3-8B), and uses these pairs for fine-tuning. Includes automated inference for evaluating model performance post-training.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Docling</span>
-                            <span class="tech-tag">VLLM</span>
-                            <span class="tech-tag">Qwen3-8B</span>
-                            <span class="tech-tag">Pytorch</span>
-                            <span class="tech-tag">scikit-learn</span>
-                            <span class="tech-tag">JSON / Pandas</span>
-                            <span class="tech-tag">peft</span>
-                            <span class="tech-tag">LoRA</span>
+                    
+                    <!-- Social media links section -->
+                    <div class="social-links">
+                        <h4>Connect With Me</h4>
+                        <div class="social-buttons">
+                            <!-- LinkedIn button -->
+                            <a href="https://www.linkedin.com/in/lbrahim/" target="_blank" class="social-btn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <!-- GitHub button -->
+                            <a href="https://github.com/lBRAHIM8323" target="_blank" class="social-btn">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <!-- HuggingFace button -->
+                            <a href="https://huggingface.co/Ibrahim-AI-dev" target="_blank" class="social-btn">
+                                <span style="font-size: 24px;">🤗</span>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
+                <!-- RIGHT COLUMN: Contact Form -->
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    
+                    <!-- 
+                        FORMSPREE SETUP INSTRUCTIONS:
+                        1. Go to https://formspree.io/ and sign up for a free account
+                        2. Create a new form and get your unique form ID
+                        3. Replace 'YOUR_FORM_ID' below with your actual Formspree form ID
+                        Example: https://formspree.io/f/xzbqwvyr
+                    -->
+                    <form id="contactForm" action="https://formspree.io/f/xzzgzeje" method="POST">
+                        <!-- Name field -->
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>RASA NLU Bot</h3>
-                        <p>Trained a Rasa NLU model for intent classification and entity extraction using custom training data. Supports multiple user intents such as greetings, FAQs, and service inquiries with high accuracy.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Rasa</span>
-                            <span class="tech-tag">Natural Language Understanding</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">scikit-learn</span>
-                            <span class="tech-tag">YAML</span>
+                        
+                        <!-- Email field -->
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
+                        
+                        <!-- Subject field -->
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
                         </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Job Description & KPI Generator for Hiring Recruiters</h3>
-                        <p>RESTful API using FastAPI to generate detailed job descriptions and KPIs from role summaries, integrated with LLM backend (Ollama API with LLaMA 3.1 model) for AI-powered natural language generation.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">LLaMA 3.1-8B</span>
-                            <span class="tech-tag">Ollama API</span>
+                        
+                        <!-- Message textarea -->
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                       <div class="project-overlay">
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>AI-Powered Resume-Job Description Matching System</h3>
-                        <p>Complete AI system using spaCy, SentenceTransformers, and Ollama for parsing and matching resumes with job descriptions using semantic embeddings and similarity algorithms.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">spaCy</span>
-                            <span class="tech-tag">SentenceTransformers</span>
-                            <span class="tech-tag">BERT</span>
-                            <span class="tech-tag">Streamlit</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>UAE Number Plate Price Prediction</h3>
-                        <p>Built a machine learning pipeline to predict number plate prices in the UAE by scraping data from Xplate.com. Included analysis of patterns like repeating digits, culturally significant numbers (e.g., 786), and short sequences. Combined data extraction, preprocessing, and ML modeling to forecast prices and uncover trends.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">BeautifulSoup</span>
-                            <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">Keras</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <!-- <div class="project-links">
-                                <a href="https://github.com/lBRAHIM8323" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div> -->
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Stock Price Prediction using LSTM</h3>
-                        <p>Advanced LSTM neural networks trained on Nifty-50 stock data with technical analysis, moving averages visualization, and deployed as interactive Streamlit web app.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">LSTM</span>
-                            <span class="tech-tag">Time Series</span>
-                            <span class="tech-tag">Financial AI</span>
-                            <span class="tech-tag">Streamlit</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Automated Legal Document Summarization</h3>
-                        <p>Fine-tuned Seq2Seq model using FLAN-T5-large with Hugging Face transformers for advanced abstractive text summarization of legal documents.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag">Transformers</span>
-                            <span class="tech-tag">Fine-tuning</span>
-                            <span class="tech-tag">FLAN-T5</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="projects-cta">
-                <a href="https://github.com/lBRAHIM8323?tab=repositories" target="_blank" class="btn btn-primary">
-                    View All Projects <i class="fab fa-github"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section - Now comes after Experience -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Skills & Technologies</h2>
-                <p class="section-subtitle">Tools and technologies I work with</p>
-            </div>
-            <div class="skills-content">
-                <div class="skills-category">
-                    <h3>Artificial Intelligence / Machine Learning</h3>
-                    <div class="skills-list">
-                        <div class="skill-tag">Machine Learning</div>
-                        <div class="skill-tag">Deep Learning</div>
-                        <div class="skill-tag">Generative AI</div>
-                        <div class="skill-tag">LLMs</div>
-                        <div class="skill-tag">Computer Vision</div>
-                        <div class="skill-tag">NLP</div>
-                        <div class="skill-tag">Object Detection</div>
-                        <div class="skill-tag">RAG</div>
-                        <div class="skill-tag">AI Agents</div>
-                        <div class="skill-tag">AI SEO</div>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <h3>Programming & Frameworks</h3>
-                    <div class="skills-list">
-                        <div class="skill-tag">Python</div>
-                        <div class="skill-tag">TensorFlow</div>
-                        <div class="skill-tag">OpenCV</div>
-                        <div class="skill-tag">Keras</div>
-                        <div class="skill-tag">PyTorch</div>
-                        <div class="skill-tag">Scikit-learn</div>
-                        <div class="skill-tag">Pandas</div>
-                        <div class="skill-tag">NumPy</div>
-                        <div class="skill-tag">Matplotlib</div>
-                        <div class="skill-tag">LoRA</div>
-                        <div class="skill-tag">PEFT</div>
-                        <div class="skill-tag">SFT</div>
-                        <div class="skill-tag">zapier</div>
-                        <div class="skill-tag">llama-index</div>
-                        <div class="skill-tag">LangChain</div>
-                        <div class="skill-tag">LangGraph</div>
-                        <div class="skill-tag">n8n</div>
-                        <div class="skill-tag">PostgreSQL</div>
-                        <div class="skill-tag">MySQL</div>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <h3>Specializations</h3>
-                    <div class="skills-list">
-                        <div class="skill-tag">Chatbots</div>
-                        <div class="skill-tag">Fine-tuning</div>
-                        <div class="skill-tag">Prompt Engineering</div>
-                        <div class="skill-tag">Model Deployment</div>
-                        <div class="skill-tag">Data Analysis</div>
-                        <!-- <div class="skill-tag">Research</div> -->
-                        <div class="skill-tag">Git</div>
-                        <div class="skill-tag">Docker</div>
-                        <!-- <div class="skill-tag">RAG</div> -->
-                    </div>
+                        
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                    
+                    <!-- Status message area -->
+                    <div id="formStatus" class="form-status"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Certifications</h2>
-                <p class="section-subtitle">Professional credentials and achievements</p>
-            </div>
-            <div class="certifications-grid">
-                <!-- Certification 1 -->
-                <div class="certification-card">
-                    <div class="certification-content">
-                        <h3>ChatGPT Prompt Engineering for Developers</h3>
-                        <h4>DeepLearning.ai</h4>
-                        <span class="certification-date">Issued Sept 2025</span>
-                        <div class="certification-skills">
-                            <span class="skill-badge">Systematic Prompt Engineering</span>
-                            <span class="skill-badge">ChatGPT</span>
-                            <span class="skill-badge">Application Integration</span>
-                            <span class="skill-badge">Custom Chatbot Development</span>
-                            <span class="skill-badge">LLM API Integration</span>
-                        </div>
-                        <a href="https://learn.deeplearning.ai/accomplishments/8e5df41f-01da-47c2-af05-ce8083f3008b?usp=sharing" target="_blank" class="view-credential-btn">View Credentials</a>
-                    </div>
-                </div>
-                
-                <!-- Certification 2 -->
-                <div class="certification-card">
-                    <div class="certification-content">
-                        <h3>Artificial Intelligence and Machine Learning</h3>
-                        <h4>Jamia Millia Islamia (JMI), Delhi</h4>
-                        <span class="certification-date">Issued Jul 2024</span>
-                        <div class="certification-skills">
-                            <span class="skill-badge">Microsoft Power BI</span>
-                            <span class="skill-badge">Keras</span>
-                            <span class="skill-badge">Artificial Neural Network</span>
-                            <span class="skill-badge">Pandas</span>
-                            <span class="skill-badge">TensorFlow</span>
-                            <span class="skill-badge">Convolutional Neural Networks (CNN)</span>
-                            <span class="skill-badge">Weka</span>
-                            <span class="skill-badge">Artificial Intelligence (AI)</span>
-                            <span class="skill-badge">NumPy</span>
-                            <span class="skill-badge">Scikit-Learn</span>
-                        </div>
-                        <a href="assets/STTP.jpeg" target="_blank" class="view-credential-btn">View Credentials</a>
-                    </div>
-                </div>
-                
-                <!-- Certification 3 -->
-                <div class="certification-card">
-                    <div class="certification-content">
-                        <h3>Supervised Machine Learning: Regression and Classification</h3>
-                        <h4>DeepLearning.AI</h4>
-                        <span class="certification-date">Issued Oct 2023</span>
-                        <div class="certification-skills">
-                            <span class="skill-badge">Classification</span>
-                            <span class="skill-badge">Logistic Regression</span>
-                            <span class="skill-badge">Regression Testing</span>
-                            <span class="skill-badge">Regression Models</span>
-                            <span class="skill-badge">Machine Learning</span>
-                        </div>
-                        <a href="assets/deeplearning_ai.jpeg" target="_blank" class="view-credential-btn">View Credentials</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- 
+        FOOTER 
+        Bottom of the website with copyright information
+    -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Mohammad Ibrahim. All rights reserved.</p>
-            </div>
+            <p>&copy; 2025 Mohammad Ibrahim. All rights reserved.</p>
+            <p>Built with HTML, CSS, and JavaScript</p>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" title="Back to top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <!-- Link to JavaScript file for all interactive features -->
+    <script src="script.js"></script>
 </body>
 </html>
